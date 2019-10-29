@@ -2,24 +2,33 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Switch API",
-    "version": "1.0"
+    "version": "1.0",
+    "description": "Exposify Switch is a service that lets you easily distribute real estate data to different platforms. Send your data once – publish it on all the platforms.\n\nIf you are building a real estate application you often need to bring offers to platforms like Immobilienscout24, Immowelt or Ebay Kleinanzeigen. Some of them have their own API, some of them use OpenImmo. Some use old FTP servers to transfer data, some complicated OAuth flows.\n\nSwitch exposes one beautiful API so you don't have to worry about all of that."
   },
   "servers": [
     {
-      "url": "http://localhost:3000"
+      "url": "http://switch.exposify.io"
+    },
+    {
+      "url": "http://sandbox.switch.exposify.io",
+      "description": ""
     }
   ],
   "paths": {
     "/properties": {
-      "get": {
-        "summary": "List all properties",
-        "tags": [],
-        "responses": {}
-      },
       "post": {
         "summary": "Create a property",
         "tags": [],
-        "responses": {}
+        "responses": {},
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../common/models/property.v1.json"
+              }
+            }
+          }
+        }
       },
       "put": {
         "summary": "Update a property",
@@ -30,6 +39,15 @@
         "summary": "Delete a property",
         "tags": [],
         "responses": {}
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "example-key": {
+        "name": "API Key",
+        "type": "apiKey",
+        "in": "query"
       }
     }
   }
