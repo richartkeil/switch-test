@@ -24,5 +24,14 @@
       "example": false
     }
   },
-  "required": ["street", "streetNumber", "postalCode", "city", "publish"]
+  "required": [
+    "street",
+    "streetNumber",
+    "postalCode",
+    "city",
+    "publish"
+  ],
+  "x-tags": [
+    "field-address"
+  ]
 }

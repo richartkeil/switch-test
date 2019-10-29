@@ -18,27 +18,43 @@
     "/properties": {
       "post": {
         "summary": "Create a property",
-        "tags": [],
+        "tags": [
+          "01-Properties-02-Create"
+        ],
         "responses": {},
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "../common/models/property.v1.json"
+                "$ref": "./models/property.v1.json"
               }
             }
           }
-        }
+        },
+        "operationId": "",
+        "description": ""
       },
       "put": {
         "summary": "Update a property",
-        "tags": [],
+        "tags": [
+          "01-Properties-03-Update"
+        ],
         "responses": {}
       },
       "delete": {
         "summary": "Delete a property",
-        "tags": [],
+        "tags": [
+          "01-Properties-04-Delete"
+        ],
         "responses": {}
+      },
+      "get": {
+        "summary": "List all properties",
+        "description": "",
+        "requestBody": {},
+        "tags": [
+          "01-Properties-01-List"
+        ]
       }
     }
   },
