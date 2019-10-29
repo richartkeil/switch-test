@@ -1,0 +1,36 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Switch API",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/properties": {
+      "get": {
+        "summary": "List all properties",
+        "tags": [],
+        "responses": {}
+      },
+      "post": {
+        "summary": "Create a property",
+        "tags": [],
+        "responses": {}
+      },
+      "put": {
+        "summary": "Update a property",
+        "tags": [],
+        "responses": {}
+      },
+      "delete": {
+        "summary": "Delete a property",
+        "tags": [],
+        "responses": {}
+      }
+    }
+  }
+}

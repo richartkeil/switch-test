@@ -1,0 +1,8 @@
+{
+  "title": "Property",
+  "oneOf": [
+    {
+      "$ref": "./apartment-rent.v1.json"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "title": "Address",
+  "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
+  "type": "object",
+  "properties": {
+    "street": {
+      "type": "string",
+      "example": "Example Street"
+    },
+    "streetNumber": {
+      "type": "string",
+      "example": "42"
+    },
+    "postalCode": {
+      "type": "string",
+      "example": "28197"
+    },
+    "city": {
+      "type": "string",
+      "example": "Example Town"
+    },
+    "publish": {
+      "type": "boolean",
+      "example": false
+    }
+  },
+  "required": ["street", "streetNumber", "postalCode", "city", "publish"]
+}
