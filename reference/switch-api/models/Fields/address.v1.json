@@ -30,8 +30,5 @@
     "postalCode",
     "city",
     "publish"
-  ],
-  "x-tags": [
-    "field-address"
   ]
 }

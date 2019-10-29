@@ -3,7 +3,7 @@
   "info": {
     "title": "Switch API",
     "version": "1.0",
-    "description": "Exposify Switch is a service that lets you easily distribute real estate data to different platforms. Send your data once – publish it on all the platforms.\n\nIf you are building a real estate application you often need to bring offers to platforms like Immobilienscout24, Immowelt or Ebay Kleinanzeigen. Some of them have their own API, some of them use OpenImmo. Some use old FTP servers to transfer data, some complicated OAuth flows.\n\nSwitch exposes one beautiful API so you don't have to worry about all of that."
+    "description": "Technical Documentation for the Switch API."
   },
   "servers": [
     {
@@ -18,9 +18,6 @@
     "/properties": {
       "post": {
         "summary": "Create a property",
-        "tags": [
-          "01-Properties-02-Create"
-        ],
         "responses": {},
         "requestBody": {
           "content": {
@@ -32,29 +29,62 @@
           }
         },
         "operationId": "",
-        "description": ""
+        "description": "",
+        "tags": [
+          "Properties"
+        ]
       },
       "put": {
         "summary": "Update a property",
+        "responses": {},
         "tags": [
-          "01-Properties-03-Update"
-        ],
-        "responses": {}
+          "Properties"
+        ]
       },
       "delete": {
         "summary": "Delete a property",
+        "responses": {},
         "tags": [
-          "01-Properties-04-Delete"
-        ],
-        "responses": {}
+          "Properties"
+        ]
       },
       "get": {
         "summary": "List all properties",
         "description": "",
         "requestBody": {},
         "tags": [
-          "01-Properties-01-List"
+          "Properties"
         ]
+      }
+    },
+    "/targets": {
+      "get": {
+        "summary": "List all targets",
+        "responses": {},
+        "tags": [
+          "Targets"
+        ]
+      },
+      "post": {
+        "summary": "Create a new target",
+        "tags": [
+          "Targets"
+        ],
+        "responses": {}
+      },
+      "put": {
+        "summary": "Update a target",
+        "tags": [
+          "Targets"
+        ],
+        "responses": {}
+      },
+      "delete": {
+        "summary": "Delete a target",
+        "tags": [
+          "Targets"
+        ],
+        "responses": {}
       }
     }
   },
