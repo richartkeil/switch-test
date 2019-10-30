@@ -3,6 +3,9 @@
   "oneOf": [
     {
       "$ref": "./apartment-rent.v1.json"
+    },
+    {
+      "$ref": "./apartment-rent.v1.json"
     }
   ]
 }

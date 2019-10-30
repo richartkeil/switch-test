@@ -5,6 +5,11 @@
     "version": "1.0",
     "description": "Technical Documentation for the Switch API."
   },
+  "x-stoplight": {
+    "docs": {
+      "showModels": false
+    }
+  },
   "servers": [
     {
       "url": "http://switch.exposify.io"
