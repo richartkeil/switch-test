@@ -1,7 +1,7 @@
 {
-  "title": "Title",
   "type": "string",
-  "example": "Wonderful new Home close to large Lake",
+  "title": "Title",
   "description": "Short description of the listed property. Used by many platforms as heading.",
-  "x-examples": {}
+  "example": "Wonderful new Home close to large Lake",
+  "maxLength": 50
 }
