@@ -28,7 +28,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "./models/property.v1.json"
+                "$ref": "https://switch-schema.netlify.com/property.json"
               }
             }
           }
