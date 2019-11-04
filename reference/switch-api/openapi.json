@@ -28,7 +28,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "https://switch-schema.netlify.com/property.json"
+                "$ref": "https://switch-schema.netlify.com/property.openApi.json"
               }
             }
           }
