@@ -372,6 +372,11 @@
         },
         "tags": [
           "Listings"
+        ],
+        "security": [
+          {
+            "api-key": []
+          }
         ]
       }
     },
