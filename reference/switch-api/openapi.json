@@ -92,7 +92,17 @@
         "summary": "List all targets",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "./models/target.v1.json"
+                  }
+                }
+              }
+            }
           }
         },
         "tags": [
@@ -112,7 +122,14 @@
         ],
         "responses": {
           "201": {
-            "description": "Created"
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/target.v1.json"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request"
@@ -127,12 +144,13 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {}
+                "$ref": "./models/target-new.v1.json"
               }
             }
-          }
-        }
+          },
+          "description": ""
+        },
+        "description": "**For targets `ebay-kleinanzeigen` and `immowelt`**\n\nFor these targets you need to provide FTP credentials that you or a third party can receive from the corresponding platforms.\n\n**For target `immobilienscout-24`**\n\nWhen you want to publish properties on behalf of a third party on Immobilienscout24 you need to let them approve the connection between you and the target first. \n\nUsually this is [a complicated procedure](https://api.immobilienscout24.de/useful/authentication/authentication-detailed.html) however Switch makes the process very easy. Just provide a URL the third party should be redirected to when everything is done.\n\nTo get started, make sure you have setup your account oauth consumer credentials. After creating the target make sure to redirect the third party to the URL that comes with the response. It will take them to a Immobilienscout24 page where they are asked to connect your app with their account. If they approve they will be redirect to the URL you initially provided in the create request. From now on the target is active and you can add listings to it."
       }
     },
     "/properties/{id}": {
@@ -155,7 +173,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": ""
           },
           "404": {
             "description": "Not Found"
@@ -185,7 +203,7 @@
             "description": "Not Found"
           }
         },
-        "description": "Update the property of your account.",
+        "description": "When you update the property Switch will automatically publish it to all targets it is currently listed on. This means that corresponding webhooks will be fired again when the listing was updated successfully.",
         "security": [
           {
             "api-key": []
@@ -200,7 +218,10 @@
             }
           },
           "description": ""
-        }
+        },
+        "tags": [
+          "Properties"
+        ]
       },
       "delete": {
         "summary": "Delete a property",
@@ -212,11 +233,14 @@
             "description": "Not Found"
           }
         },
-        "description": "Delete the property of your account.",
+        "description": "Permanently delete a property and all of it listings. Already published listings will remain on the platform of their target if one does not remove them explicitely beforehand.",
         "security": [
           {
             "api-key": []
           }
+        ],
+        "tags": [
+          "Properties"
         ]
       }
     },
@@ -240,7 +264,14 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/target.v1.json"
+                }
+              }
+            }
           },
           "404": {
             "description": "Not Found"
@@ -254,8 +285,8 @@
         ],
         "requestBody": {}
       },
-      "put": {
-        "summary": "Update a target",
+      "delete": {
+        "summary": "Delete a target",
         "responses": {
           "200": {
             "description": "OK"
@@ -264,42 +295,37 @@
             "description": "Not Found"
           }
         },
-        "description": "",
+        "description": "Permanently delete a target and all of its listings. Already published listings will remain on the platform of the target if one does not remove them explicitely beforehand.",
+        "tags": [
+          "Targets"
+        ],
         "security": [
           {
             "api-key": []
           }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {}
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete a target",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        },
-        "description": ""
+        ]
       }
     },
     "/listings": {
       "get": {
         "summary": "Get all listings",
         "tags": [
-          "Listings"
+          "Listings",
+          "listings-get"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "./models/listing.v1.json"
+                  }
+                }
+              }
+            }
           }
         },
         "description": "",
@@ -313,23 +339,33 @@
         "summary": "Create a listing",
         "responses": {
           "201": {
-            "description": "Created"
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/listing.v1.json"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad Request"
           }
         },
-        "description": "",
+        "description": "Create a new listing and hence publish the property. The action will be processed in our queue. We will post to your webhook when the listing has been created successfully.",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {}
+                "$ref": "./models/listing-new.v1.json"
               }
             }
-          }
-        }
+          },
+          "description": ""
+        },
+        "tags": [
+          "Listings"
+        ]
       }
     },
     "/listings/{id}": {
@@ -346,13 +382,20 @@
         }
       ],
       "get": {
-        "summary": "Delete a listing",
+        "summary": "Get a listing",
         "tags": [
           "Listings"
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/target.v1.json"
+                }
+              }
+            }
           },
           "404": {
             "description": "Not Found"
@@ -364,8 +407,8 @@
           }
         ]
       },
-      "put": {
-        "summary": "Update a listing",
+      "delete": {
+        "summary": "Delete a listing",
         "responses": {
           "200": {
             "description": "OK"
@@ -374,11 +417,13 @@
             "description": "Not Found"
           }
         },
-        "description": "",
         "security": [
           {
             "api-key": []
           }
+        ],
+        "tags": [
+          "Listings"
         ]
       }
     }

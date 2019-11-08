@@ -1,0 +1,29 @@
+{
+  "title": "listing",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The ID of the listing."
+    },
+    "propertyId": {
+      "type": "string",
+      "description": "The ID of the property that is listed."
+    },
+    "targetId": {
+      "type": "string",
+      "description": "The ID of the target the listing is on."
+    },
+    "createdAt": {
+      "type": "string",
+      "description": "When the listing was created.",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "id",
+    "propertyId",
+    "targetId",
+    "createdAt"
+  ]
+}

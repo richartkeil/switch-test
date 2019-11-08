@@ -1,0 +1,18 @@
+{
+  "title": "new-listing",
+  "type": "object",
+  "properties": {
+    "propertyId": {
+      "type": "string",
+      "description": "The ID of the property that should be published."
+    },
+    "targetId": {
+      "type": "string",
+      "description": "The ID of the target the listing should appear on."
+    }
+  },
+  "required": [
+    "propertyId",
+    "targetId"
+  ]
+}

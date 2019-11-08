@@ -1,0 +1,85 @@
+{
+  "title": "new-target",
+  "oneOf": [
+    {
+      "description": "Ebay Kleinanzeigen",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "ebay-kleinanzeigen"
+          ],
+          "description": "Indicates the type `ebay-kleinanzeigen`."
+        },
+        "ftpHost": {
+          "type": "string",
+          "description": "The hostname of the FTP server."
+        },
+        "ftpUsername": {
+          "type": "string",
+          "description": "The username for the FTP server."
+        },
+        "ftpPassword": {
+          "type": "string",
+          "description": "The password for the FTP server."
+        }
+      },
+      "required": [
+        "type",
+        "ftpHost",
+        "ftpUsername",
+        "ftpPassword"
+      ]
+    },
+    {
+      "description": "Immowelt",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "immowelt"
+          ],
+          "description": "Indicates the type `immowelt`."
+        },
+        "ftpHost": {
+          "type": "string",
+          "description": "The hostname of the FTP server."
+        },
+        "ftpUsername": {
+          "type": "string",
+          "description": "The username for the FTP server."
+        },
+        "ftpPassword": {
+          "type": "string",
+          "description": "The password for the FTP server."
+        }
+      },
+      "required": [
+        "type",
+        "ftpHost",
+        "ftpUsername",
+        "ftpPassword"
+      ]
+    },
+    {
+      "description": "Immobilienscout24",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "immobilienscout-24"
+          ],
+          "description": "Indicates the type `immobilienscout-24`."
+        },
+        "redirectUrl": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "redirectUrl"
+      ]
+    }
+  ],
+  "type": "object"
+}
