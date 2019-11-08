@@ -173,7 +173,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/property.v1.json"
+                }
+              }
+            }
           },
           "404": {
             "description": "Not Found"
@@ -392,7 +399,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "./models/target.v1.json"
+                  "$ref": "./models/listing.v1.json"
                 }
               }
             }
@@ -411,7 +418,7 @@
         "summary": "Delete a listing",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": ""
           },
           "404": {
             "description": "Not Found"
