@@ -26,7 +26,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "./models/response.v1.json"
+                  "$ref": "./models/property.v1.json"
                 }
               }
             }
@@ -117,7 +117,7 @@
         "tags": [
           "Targets"
         ],
-        "description": "",
+        "description": "Return all targets of your account.",
         "security": [
           {
             "api-key": []
@@ -135,7 +135,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "./models/response.v1.json"
+                  "$ref": "./models/target.v1.json"
                 }
               }
             }
@@ -209,7 +209,7 @@
             }
           }
         },
-        "description": "Return the specific property of your account.",
+        "description": "Return a specific property of your account.",
         "security": [
           {
             "api-key": []
@@ -224,7 +224,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "./models/response.v1.json"
+                  "$ref": "./models/property.v1.json"
                 }
               }
             }
@@ -264,7 +264,7 @@
         "summary": "Delete a property",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -335,7 +335,7 @@
             }
           }
         },
-        "description": "",
+        "description": "Return a specific target of your account.",
         "security": [
           {
             "api-key": []
@@ -399,10 +399,37 @@
             }
           }
         },
-        "description": "",
+        "description": "Return all listings that are currently on your account.",
         "security": [
           {
             "api-key": []
+          }
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "property-id",
+            "description": "Get only the listings of this property."
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "target-id",
+            "description": "Get only the listings of this target."
+          },
+          {
+            "schema": {
+              "type": "boolean",
+              "default": "false"
+            },
+            "in": "query",
+            "name": "published",
+            "description": "Get only published listings."
           }
         ]
       },
@@ -414,7 +441,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "./models/response.v1.json"
+                  "$ref": "./models/listing.v1.json"
                 }
               }
             }
@@ -430,7 +457,7 @@
             }
           }
         },
-        "description": "Create a new listing and hence publish the property. The action will be processed in our queue. We will post to your webhook when the listing has been created successfully.",
+        "description": "Create a new listing and hence publish the property. The action will be processed in our queue. We will post to your webhook when the listing has been created successfully (at this moment the `published` attribute on the listing will change to `true`).",
         "requestBody": {
           "content": {
             "application/json": {
@@ -495,7 +522,8 @@
           {
             "api-key": []
           }
-        ]
+        ],
+        "description": "Return a specific listing."
       },
       "delete": {
         "summary": "Delete a listing",
@@ -528,7 +556,8 @@
         ],
         "tags": [
           "Listings"
-        ]
+        ],
+        "description": "Delete a specific listing. This will remove the property from the platform of the target."
       }
     }
   },

@@ -18,12 +18,20 @@
       "type": "string",
       "description": "When the listing was created.",
       "format": "date-time"
+    },
+    "publishedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "When the listing was published - null if it is not."
     }
   },
   "required": [
     "id",
     "propertyId",
     "targetId",
-    "createdAt"
+    "createdAt",
+    "publishedAt"
   ]
 }
