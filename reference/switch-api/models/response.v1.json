@@ -1,0 +1,26 @@
+{
+  "title": "response",
+  "type": "object",
+  "x-examples": {
+    "Created": {
+      "status": 201,
+      "message": "The property has been created successfully."
+    },
+    "Not Found": {
+      "status": 404,
+      "message": "The listing with the ID [f6c24d6c-d0e0-4c87-a270-afa6df72fc8f] could not be found."
+    },
+    "Validation Failed": {
+      "status": 400,
+      "message": "The validation for the given property failed: Length of [title] must not exceed 100 characters."
+    }
+  },
+  "properties": {
+    "message": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  }
+}

@@ -26,13 +26,20 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "./models/property.v1.json"
+                  "$ref": "./models/response.v1.json"
                 }
               }
             }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/response.v1.json"
+                }
+              }
+            }
           }
         },
         "requestBody": {
@@ -128,13 +135,20 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "./models/target.v1.json"
+                  "$ref": "./models/response.v1.json"
                 }
               }
             }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/response.v1.json"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -185,7 +199,14 @@
             }
           },
           "404": {
-            "description": "Not Found"
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/response.v1.json"
+                }
+              }
+            }
           }
         },
         "description": "Return the specific property of your account.",
@@ -203,13 +224,20 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "./models/property.v1.json"
+                  "$ref": "./models/response.v1.json"
                 }
               }
             }
           },
           "404": {
-            "description": "Not Found"
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/response.v1.json"
+                }
+              }
+            }
           }
         },
         "description": "When you update the property Switch will automatically publish it to all targets it is currently listed on. This means that corresponding webhooks will be fired again when the listing was updated successfully.",
@@ -236,10 +264,24 @@
         "summary": "Delete a property",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/response.v1.json"
+                }
+              }
+            }
           },
           "404": {
-            "description": "Not Found"
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/response.v1.json"
+                }
+              }
+            }
           }
         },
         "description": "Permanently delete a property and all of it listings. Already published listings will remain on the platform of their target if one does not remove them explicitely beforehand.",
@@ -283,7 +325,14 @@
             }
           },
           "404": {
-            "description": "Not Found"
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/response.v1.json"
+                }
+              }
+            }
           }
         },
         "description": "",
@@ -298,10 +347,24 @@
         "summary": "Delete a target",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/response.v1.json"
+                }
+              }
+            }
           },
           "404": {
-            "description": "Not Found"
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/response.v1.json"
+                }
+              }
+            }
           }
         },
         "description": "Permanently delete a target and all of its listings. Already published listings will remain on the platform of the target if one does not remove them explicitely beforehand.",
@@ -351,13 +414,20 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "./models/listing.v1.json"
+                  "$ref": "./models/response.v1.json"
                 }
               }
             }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/response.v1.json"
+                }
+              }
+            }
           }
         },
         "description": "Create a new listing and hence publish the property. The action will be processed in our queue. We will post to your webhook when the listing has been created successfully.",
@@ -411,7 +481,14 @@
             }
           },
           "404": {
-            "description": "Not Found"
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/response.v1.json"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -424,10 +501,24 @@
         "summary": "Delete a listing",
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/response.v1.json"
+                }
+              }
+            }
           },
           "404": {
-            "description": "Not Found"
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/response.v1.json"
+                }
+              }
+            }
           }
         },
         "security": [
