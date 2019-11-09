@@ -1,7 +1,7 @@
 {
   "allOf": [
     {
-      "$ref": "./property.v1.json"
+      "$ref": "./property-new.v1.json"
     },
     {
       "properties": {
