@@ -317,8 +317,7 @@
       "get": {
         "summary": "Get all listings",
         "tags": [
-          "Listings",
-          "listings-get"
+          "Listings"
         ],
         "responses": {
           "200": {
