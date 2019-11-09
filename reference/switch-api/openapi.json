@@ -3,7 +3,13 @@
   "info": {
     "title": "Switch API",
     "version": "1.0",
-    "description": "Technical Documentation for the Switch API."
+    "description": "Technical Documentation for the Switch API.\n\n# Introduction\n\nExposify Switch is a service that lets you easily distribute real estate data to different platforms. Send your data once – publish it on all the platforms.\n\nIf you are building a real estate application you often need to bring offers to platforms like Immobilienscout24, Immowelt or Ebay Kleinanzeigen. Some of them have their own API, some of them use OpenImmo. Some use old FTP servers to transfer data, some complicated OAuth flows.\n\nSwitch exposes one beautiful API so you don't have to worry about all of that.\n\n# Getting started\n\nYou can just use your account to easily test things.",
+    "contact": {
+      "name": "Exposify",
+      "url": "www.exposify.de/contact",
+      "email": "info@exposify.de"
+    },
+    "termsOfService": "https://www.exposify.de/nutzungsbedingungen/"
   },
   "x-stoplight": {
     "docs": {
@@ -444,7 +450,8 @@
       "api-key": {
         "name": "API Key",
         "type": "apiKey",
-        "in": "header"
+        "in": "header",
+        "description": "When you sign up for an account a first API key will be automatically added. You can use it to publish and modify resources."
       }
     }
   }
