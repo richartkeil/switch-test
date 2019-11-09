@@ -3,7 +3,6 @@
     {
       "title": "Apartment Rent",
       "description": "An apartment that is listed for rent.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -24,6 +23,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -49,14 +55,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -484,7 +483,6 @@
     {
       "title": "Apartment Buy",
       "description": "An apartment that is listed for purchase.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -505,6 +503,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -530,14 +535,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -953,9 +951,9 @@
           "required": [
             "title",
             "address",
-            "purchasePrice",
             "livingArea",
-            "numberOfRooms"
+            "numberOfRooms",
+            "purchasePrice"
           ]
         }
       }
@@ -963,7 +961,6 @@
     {
       "title": "House Rent",
       "description": "A house that is listed for rent.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -984,6 +981,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -1009,14 +1013,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -1410,9 +1407,9 @@
           "required": [
             "title",
             "address",
+            "plotArea",
             "coldRent",
             "livingArea",
-            "plotArea",
             "numberOfRooms"
           ]
         }
@@ -1421,7 +1418,6 @@
     {
       "title": "House Buy",
       "description": "A house that is listed for purchase.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -1442,6 +1438,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -1467,14 +1470,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -1858,10 +1854,10 @@
           "required": [
             "title",
             "address",
-            "purchasePrice",
-            "livingArea",
             "plotArea",
-            "numberOfRooms"
+            "livingArea",
+            "numberOfRooms",
+            "purchasePrice"
           ]
         }
       }
@@ -1869,7 +1865,6 @@
     {
       "title": "Plot Rent",
       "description": "A plot that is listed for residential use and rent or lease.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -1890,6 +1885,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -1915,14 +1917,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -2058,8 +2053,8 @@
           "required": [
             "title",
             "address",
-            "rent",
-            "plotArea"
+            "plotArea",
+            "rent"
           ]
         }
       }
@@ -2067,7 +2062,6 @@
     {
       "title": "Plot Buy",
       "description": "A plot that is listed for residential use and purchase.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -2088,6 +2082,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -2113,14 +2114,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -2250,8 +2244,8 @@
           "required": [
             "title",
             "address",
-            "purchasePrice",
-            "plotArea"
+            "plotArea",
+            "purchasePrice"
           ]
         }
       }
@@ -2259,7 +2253,6 @@
     {
       "title": "Parking Space Rent",
       "description": "A parking space that is listed for rent.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -2280,6 +2273,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -2305,14 +2305,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -2467,7 +2460,6 @@
     {
       "title": "Parking Space Buy",
       "description": "A parking space that is listed for purchase.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -2488,6 +2480,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -2513,14 +2512,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -2655,7 +2647,6 @@
     {
       "title": "Office Rent",
       "description": "An office that is listed for rent.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -2676,6 +2667,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -2701,14 +2699,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -3111,7 +3102,6 @@
     {
       "title": "Office Buy",
       "description": "An office that is listed for purchase.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -3132,6 +3122,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -3157,14 +3154,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -3546,7 +3536,6 @@
     {
       "title": "Gastronomy Rent",
       "description": "A gastronomy that is listed for rent.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -3567,6 +3556,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -3592,14 +3588,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -3994,7 +3983,6 @@
     {
       "title": "Gastronomy Buy",
       "description": "A gastronomy that is listed for purchase.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -4015,6 +4003,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -4040,14 +4035,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -4421,7 +4409,6 @@
     {
       "title": "Retail Rent",
       "description": "A retail property that is listed for rent.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -4442,6 +4429,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -4467,14 +4461,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -4852,7 +4839,6 @@
     {
       "title": "Retail Buy",
       "description": "A retail property that is listed for purchase.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -4873,6 +4859,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -4898,14 +4891,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -5262,7 +5248,6 @@
     {
       "title": "Industrial Rent",
       "description": "An industrial property that is listed for rent.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -5283,6 +5268,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -5308,14 +5300,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -5700,7 +5685,6 @@
     {
       "title": "Industrial Buy",
       "description": "An industrial property that is listed for purchase.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -5721,6 +5705,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -5746,14 +5737,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -6117,7 +6101,6 @@
     {
       "title": "Commercial Plot Rent",
       "description": "A plot that is listed for commercial use and rent or lease.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -6138,6 +6121,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -6163,14 +6153,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -6326,7 +6309,6 @@
     {
       "title": "Commercial Plot Buy",
       "description": "A plot that is listed for commercial use and purchase.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -6347,6 +6329,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -6372,14 +6361,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -6523,7 +6505,6 @@
     {
       "title": "Other Commercial Rent",
       "description": "A commercial property that is listed for rent and does not fit into a specific category.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -6544,6 +6525,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -6569,14 +6557,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -6934,8 +6915,8 @@
             "title",
             "address",
             "rent",
-            "usableArea",
-            "totalArea"
+            "totalArea",
+            "usableArea"
           ]
         }
       }
@@ -6943,7 +6924,6 @@
     {
       "title": "Other Commercial Buy",
       "description": "A commercial property that is listed for purchase and does not fit into a specific category.",
-      "type": "object",
       "properties": {
         "type": {
           "enum": [
@@ -6964,6 +6944,13 @@
               "title": "Address",
               "description": "Geographic location of the property. Try to always pass all the information - if the street address should be published, just set the attribute 'publish' to 'true'.",
               "type": "object",
+              "required": [
+                "street",
+                "streetNumber",
+                "postalCode",
+                "city",
+                "publish"
+              ],
               "properties": {
                 "street": {
                   "type": "string",
@@ -6989,14 +6976,7 @@
                   "type": "boolean",
                   "example": false
                 }
-              },
-              "required": [
-                "street",
-                "streetNumber",
-                "postalCode",
-                "city",
-                "publish"
-              ]
+              }
             },
             "externalId": {
               "title": "External ID",
@@ -7333,11 +7313,12 @@
             "title",
             "address",
             "purchasePrice",
-            "usableArea",
-            "totalArea"
+            "totalArea",
+            "usableArea"
           ]
         }
       }
     }
-  ]
+  ],
+  "type": "object"
 }

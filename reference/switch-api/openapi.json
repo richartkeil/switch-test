@@ -44,10 +44,11 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "./models/property.v1.json"
+                "$ref": "./models/property-new.v1.json"
               }
             }
-          }
+          },
+          "description": ""
         },
         "operationId": "",
         "description": "Add a new property to your account.",
@@ -226,7 +227,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "./models/property.v1.json"
+                "$ref": "./models/property-new.v1.json"
               }
             }
           },
