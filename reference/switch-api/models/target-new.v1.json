@@ -2,6 +2,7 @@
   "title": "new-target",
   "oneOf": [
     {
+      "title": "Ebay Kleinanzeigen",
       "description": "Ebay Kleinanzeigen",
       "properties": {
         "type": {
@@ -32,6 +33,7 @@
       ]
     },
     {
+      "title": "Immowelt",
       "description": "Immowelt",
       "properties": {
         "type": {
@@ -62,6 +64,7 @@
       ]
     },
     {
+      "title": "Immobilienscout24",
       "description": "Immobilienscout24",
       "properties": {
         "type": {
