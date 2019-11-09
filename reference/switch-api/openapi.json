@@ -229,6 +229,16 @@
               }
             }
           },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "./models/response.v1.json"
+                }
+              }
+            }
+          },
           "404": {
             "description": "Not Found",
             "content": {
